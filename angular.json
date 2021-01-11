@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "WorkflowManager"
+    }
+  },
+  "defaultProject": "WorkflowManager",
+  "cli": {
+    "analytics": false
+  }
 }
