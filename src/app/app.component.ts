@@ -16,14 +16,15 @@ export class AppComponent {
   sortingDrop = "";
   editMode = false;
   checkAll = false;
+  createNew = false;
   
   // DABLA MOCEMULI TASK -> ARRAY UNDA CHAANACVLO API -TI MOTANILI DATA-TI
   
   Tasks = [
-  {title:"Workout",description:" Lorem tu ragac",done:true,starts:"02:35",ends:"03:35"},
   {title:"Workout",description:" Lorem tu ragac",done:false,starts:"02:35",ends:"03:35"},
   {title:"Workout",description:" Lorem tu ragac",done:false,starts:"02:35",ends:"03:35"},
-  {title:"Workout",description:" Lorem tu ragac",done:false,starts:"02:35",ends:"03:35"}
+  {title:"Workout",description:" Lorem tu ragac",done:false,starts:"02:35",ends:"03:35"},
+  {title:"Workout",description:" Lorem tu ragac",done:true,starts:"02:35",ends:"03:35"}
   ];
   
   CheckAll(){

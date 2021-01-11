@@ -34,15 +34,16 @@
 .Content 
   user-select: none
   width: 66%
-  height: 100vh
+  height: 24vh
   float: right
-  padding: 5% 7%
+  padding: 2% 7%
 
 // AMIS DABLA MOCEMULI KODI UNDA GADAVIDES CHILD COMPONENTIS STYLESHI SASS DABOLOEBA EQNEBA
 
 .Search-task 
   @include horizontalBox()
   
+  margin-top: 4%
   width: 90%
   padding: 0 5%
   background: $purple
@@ -67,13 +68,62 @@
     height: 5vh
     width: auto
 
+.New
+  display: grid
+  grid-template-columns: 16% 57% 18%
+  grid-gap: 5%
+  align-items: center
+  width: 96%
+  padding: 0 2%
+  height: 12vh
+  margin: 1.5% 0
+    
+  .Today
+    grid-column: 2
+    width: 100%
+    @include horizontalBox()
+    justify-content: center
+    
+    input
+      width: 50%
+  .Button
+    grid-column: 1
+    @include horizontalBox()
+      
+    justify-content: center
+    width: 100%
+    height: 7vh
+    background: $purple
+    color: white
+    cursor: pointer
+    border-radius: 20px
 
+  input
+    grid-column: 2
+    width: 100%
+    height: 6vh
+    padding-left: 3%
+    border-radius: 10px
+    background: $lightGray
+    
+  
+  .Calendar
+    grid-column: 3
+    width: 100%
+    height: inherit
+    display: flex
+    cursor: pointer
+    justify-content: center
+    
+    img
+      width: 65%
+      height: auto  
+  
+  
 .Tools 
   @include horizontalBox()
-    
   width: 100%
-  height: 10vh
-  margin-top: 3%
+  height: 7vh
   
   .Tool
     @include horizontalBox()
@@ -116,8 +166,8 @@
   .Sorting-list 
     @include verticalBox()
       
-    top: 30.9vh
-    right: 62%
+    top: 34.9vh
+    right: 61.8%
     width: 9% 
     height: 45vh
     position: absolute
@@ -140,7 +190,6 @@
   
 .All-tasks 
   width: 100%
-
   .Task 
     @include horizontalBox()
     
@@ -172,7 +221,7 @@
       img
         width: 100%
         height: 100%
-
+        
     .Time 
       @include verticalBox
         
@@ -190,6 +239,7 @@
       padding-left: 3%
       border-radius: 10px
       background: white
+      transition: all 1s
       
       &::placeholder 
         color: $middleGray

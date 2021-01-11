@@ -20,7 +20,20 @@
     <input type="text" name="" placeholder="Search.." (keyup)="search()">
     <img src="assets/img/search.png" alt="icon">
   </div>
+  
 
+  <div class="New">
+    <div class="Button" (click)="createNew =! createNew"> New</div>
+    
+    <input type="text" name="" placeholder=" Create a new task.."*ngIf="createNew">
+    
+    <div class="Today" *ngIf="!createNew">
+      <input type="date" name="" value="" >
+    </div>
+    
+    <div class="Calendar"> <img src="assets/img/calendar.png"> </div>
+  </div>
+  
   <div class="Tools">
     <div class="Tool Sorting" (click)="sorting = !sorting">
       <p>Sort By</p>
@@ -55,7 +68,7 @@
       <div class="Time"> {{task.starts}} </div>
       <div class="Time"> {{task.ends}} </div>
       
-      <img src="assets/img/pencil.png" alt="pencil">
+      <img src="assets/img/pencil.png" alt="pencil" (click)="editMode = !editMode">
       <img src="assets/img/remove.png" alt="remove">
     </div>
   </div>
