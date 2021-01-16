@@ -1,10 +1,8 @@
-<!-- API LINK: http://tasksapi.docelove.cf -->
-
 <nav class="Nav-menu">
   <img src="assets/img/defaultProfile.png" alt="Profile">
   
   <div class="Links">
-    <p routerLink="Todolist">To Do List</p>
+    <p routerLink="ToDoList">To Do List</p>
     <p routerLink="Calendar">Calendar</p>
     <p routerLink="Projects">Projects</p>
     <p routerLink="Settings">Settings</p>
@@ -14,67 +12,7 @@
 </nav>
 
 <div class="Content">
-  <!-- DABLA DAWERILI KODI UNDA GADAVIDES SHESABAMIS CHILD COMPONENTSHI -->
-
-  <div class="Search-task">
-    <input type="text" name="" placeholder="Search.." (keyup)="search()">
-    <img src="assets/img/search.png" alt="icon">
-  </div>
-  
-
-  <div class="New">
-    <div class="Button" (click)="createNew =! createNew"> New</div>
-    
-    <input type="text" name="" placeholder=" Create a new task.."*ngIf="createNew">
-    
-    <div class="Today" *ngIf="!createNew">
-      <input type="date" name="" value="" >
-    </div>
-    
-    <div class="Calendar"> <img src="assets/img/calendar.png"> </div>
-  </div>
-  
-  <div class="Tools">
-    <div class="Tool Sorting" (click)="sorting = !sorting">
-      <p>Sort By</p>
-      <img src="assets/img/dropdown.png" alt="icon" [class]="sortingDrop">
-    </div>
-    
-    <div class="Sorting-list" *ngIf="sorting">
-      <div class="sorter Activated-sorter" (click)="sort()"> <p>All</p> </div>
-      <div class="sorter" (click)="sort()"> <p>Newest</p> </div>
-      <div class="sorter" (click)="sort()"> <p>Latest</p> </div>
-      <div class="sorter" (click)="sort()"> <p>Project 1</p> </div>
-      <div class="sorter" (click)="sort()"> <p>Project 2</p> </div>
-    </div>
-    
-    <div class="Tool Activated"> <p (click)="CheckAll()">Check All</p> </div>
-    <div class="Tool"> <p (click)="Done()">Done</p> </div>
-    <div class="Tool"> <p (click)="Undone()">Undone</p> </div>
-    
-    <div class="Tool Clear"> <p (click)="Clear()">Clear</p> </div>
-  </div>
-
-  <div class="All-tasks">
-    <div class="Task" *ngFor="let task of Tasks">
-      <div class="Checkbox" (click)="task.done = !task.done"> 
-        <img src="assets/img/checked.png" *ngIf="task.done"> 
-      </div>
-      
-      <p [ngClass]="{'Checked' : task.done}"  *ngIf="!editMode">{{task.title}}</p>
-      
-      <input type="text" name="" [placeholder]="task.title" *ngIf="editMode">
-      
-      <div class="Time"> {{task.starts}} </div>
-      <div class="Time"> {{task.ends}} </div>
-      
-      <img src="assets/img/pencil.png" alt="pencil" (click)="editMode = !editMode">
-      <img src="assets/img/remove.png" alt="remove">
-    </div>
-  </div>
-  
-  
-  <!-- <router-outlet></router-outlet> -->
+  <router-outlet></router-outlet>
 </div>
 
 
