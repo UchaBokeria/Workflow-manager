@@ -11,5 +11,5 @@
   <div class="Time"> {{task.ends}} </div>
   
   <img src="assets/img/pencil.png" alt="pencil" (click)="editMode = !editMode">
-  <img src="assets/img/remove.png" alt="remove">
+  <img src="assets/img/remove.png" alt="remove" (click)="remove(task.id)">
 </div>

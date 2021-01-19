@@ -16,7 +16,7 @@ const routes: Routes = [
     path: "ToDoList",
     component: TodolistComponent,
     children: [
-    { path: "Allproduct", component: AlltasksComponent },
+    { path: "Allproduct/:date", component: AlltasksComponent },
     { path: "Filter/:category", component: FilterComponent },
     { path: "Search/:keyword", component: SearchComponent },
     { path: "", redirectTo: "Allproduct", pathMatch: "full" },

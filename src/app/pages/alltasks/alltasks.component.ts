@@ -15,6 +15,8 @@ export class AlltasksComponent implements OnInit {
   ngOnInit(): void {
     this.Tasks = this.Task.getAll();
   }
-  
+  remove(id){
+    
+  }
 
 }
