@@ -4,23 +4,21 @@
     <p>{{Title.date}} {{Title.month}} {{Title.day}} {{yearIndicator}} </p>
     <img src="assets/img/next.png" (click)="nextMonth()">
   </div>
-  
+
   <div class="Weeks">
     <div class="Days Title" *ngFor="let day of days">
       <p>{{day}}</p>
     </div>
   </div>
-  
+
   <div class="Weeks" *ngFor="let week of weeks; index as i">
     <div class="Days" *ngFor="let day of weeks[0]; index as j"
       [ngClass]="{'Today': (i == Today.row && j == Today.col) && Current.ShowToday}">
       <p>{{week[j]}}</p>
-      
-      <div class="TaskQuant" *ngFor="let tday of taskdays;index as m">
-        <span *ngIf="week[j] == tday[m]"> {{x}} </span>
-      </div>
-      
+
+      <div class="TaskQuant" *ngIf="taskQuant[i*7+j] > 0"> {{taskQuant[i*7+j]}} </div>
+
     </div>
-  </div>  
-  
+  </div>
+
 </div>

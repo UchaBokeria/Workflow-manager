@@ -7,16 +7,19 @@ import { GetTasksService } from '../../get-tasks.service';
   styleUrls: ['./alltasks.component.sass']
 })
 export class AlltasksComponent implements OnInit {
-  
 
-  Tasks;
+
+  tasks;
   constructor(private Task:GetTasksService) { }
 
   ngOnInit(): void {
-    this.Tasks = this.Task.getAll();
+    this.Task.getAll().subscribe( (data:any) => {
+      this.tasks = data;
+
+    });
   }
   remove(id){
-    
+
   }
 
 }

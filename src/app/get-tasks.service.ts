@@ -6,23 +6,26 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class GetTasksService {
-  link = "";
-  
-  tasks = [
-     {id:1,title:"Workout",description:" Lorem tu ragac",done:false,starts:"02:35",ends:"03:35"},
-     {id:2,title:"Workout",description:" Lorem tu ragac",done:false,starts:"02:35",ends:"03:35"},
-     {id:3,title:"Workout",description:" Lorem tu ragac",done:false,starts:"02:35",ends:"03:35"},
-     {id:4,title:"Workout",description:" Lorem tu ragac",done:true,starts:"02:35",ends:"03:35"}
-   ];
-  
+  link = "http://localhost/taskAPI/";
+
+  tasks = this.link  + "taskApi.php";
+  tasksQuant = this.tasks + "?date=";
+
+
+  // tasks = [
+  //    {id:1,title:"Workout",description:" Lorem tu ragac",done:false,starts:"02:35",ends:"03:35"},
+  //    {id:2,title:"Workout",description:" Lorem tu ragac",done:false,starts:"02:35",ends:"03:35"},
+  //    {id:3,title:"Workout",description:" Lorem tu ragac",done:false,starts:"02:35",ends:"03:35"},
+  //    {id:4,title:"Workout",description:" Lorem tu ragac",done:true,starts:"02:35",ends:"03:35"}
+  //  ];
+
   constructor(private Http:HttpClient) { }
-  
+
   getAll(){
-    // return this.Http.get(this.link);
-    return this.tasks;
+    return this.Http.get(this.tasks);
   }
+
   getQuant(date){
-    // return this.Http.get(this.link + "?date=" + date);
-    return this.tasks.length;
+    return this.Http.get(this.tasksQuant + date);
   }
 }

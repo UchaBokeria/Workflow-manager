@@ -1,15 +1,15 @@
-<div class="Task" *ngFor="let task of Tasks">
-  <div class="Checkbox" (click)="task.done = !task.done"> 
-    <img src="assets/img/checked.png" *ngIf="task.done"> 
+<div class="Task" *ngFor="let task of tasks">
+  <div class="Checkbox" (click)="task.done = !task.done">
+    <img src="assets/img/checked.png" *ngIf="task.done">
   </div>
-  
+
   <p [ngClass]="{'Checked' : task.done}"  *ngIf="!editMode">{{task.title}}</p>
-  
+
   <input type="text" name="" [placeholder]="task.title" *ngIf="editMode">
-  
+
   <div class="Time"> {{task.starts}} </div>
   <div class="Time"> {{task.ends}} </div>
-  
+
   <img src="assets/img/pencil.png" alt="pencil" (click)="editMode = !editMode">
   <img src="assets/img/remove.png" alt="remove" (click)="remove(task.id)">
 </div>
