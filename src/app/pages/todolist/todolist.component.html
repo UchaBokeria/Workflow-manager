@@ -6,13 +6,13 @@
 
 <div class="New">
   <div class="Button" (click)="createNew =! createNew"> New</div>
-  
+
   <input type="text" name="" placeholder=" Create a new task.."*ngIf="createNew">
-  
+
   <div class="Today" *ngIf="!createNew">
     <input type="date" name="" value="" >
   </div>
-  
+
   <div class="Calendar"> <img src="assets/img/calendar.png"> </div>
 </div>
 
@@ -21,24 +21,24 @@
     <p>Category</p>
     <img src="assets/img/dropdown.png" alt="icon" [class]="sortingDrop">
   </div>
-  
+
   <div class="Sorting-list" *ngIf="sorting">
-    <div class="Sorter Activated-sorter" [routerLink]="['Allproduct']"> 
-      <p>All</p> 
+    <div class="Sorter Activated-sorter" [routerLink]="['Allproduct']">
+      <p>All</p>
     </div>
-    
+
     <div class="Categories" *ngFor="let categ of category">
-      <div class="Sorter" [routerLink]="['Filter',categ]"> 
-        <p>{{categ}}</p> 
+      <div class="Sorter" [routerLink]="['Filter',categ]">
+        <p>{{categ}}</p>
       </div>
     </div>
 
   </div>
-  
+
   <div class="Tool Activated"> <p (click)="CheckAll()">Check All</p> </div>
   <div class="Tool"> <p (click)="Done()">Done</p> </div>
   <div class="Tool"> <p (click)="Undone()">Undone</p> </div>
-  
+
   <div class="Tool Clear"> <p (click)="Clear()">Clear</p> </div>
 </div>
 

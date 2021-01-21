@@ -12,6 +12,8 @@ export class CalendarComponent implements OnInit {
   months = ["January","February","March","April","May","June","July",
                     "August","September","October","November","December"];
 
+  showDayList = true;
+
   weeks = [
     ["","","","","","",""],
     ["","","","","","",""],
@@ -20,9 +22,9 @@ export class CalendarComponent implements OnInit {
     ["","","","","","",""],
     ["","","","","","",""]
   ];
-  weeksDisplay = 5;
+  weeksDisplay = 6;
 
-  taskQuant = [];
+  taskQuant = Array(this.weeksDisplay * 7);
 
   monthIndicator = new Date().getMonth();
   yearIndicator = new Date().getFullYear();
@@ -30,6 +32,8 @@ export class CalendarComponent implements OnInit {
   Today = { row: 0 , col: 0 };
   Title = { date: 0, day: "", month: ""};
   Current = { Month: 0, Year: 0, ShowToday : true };
+
+  monthStart = 0;
 
   constructor(private Task:GetTasksService) {}
   ngOnInit(): void {
@@ -44,6 +48,8 @@ export class CalendarComponent implements OnInit {
     this.Title.date = new Date().getDate();
     this.Title.day = this.days[new Date().getDay()];
     this.Title.month = this.months[this.monthIndicator];
+
+    this.monthStart = 0;
 
     var firstDate = new Date(this.yearIndicator, this.monthIndicator, 1);
     var lastDate = new Date(this.yearIndicator, this.monthIndicator + 1, 0);
@@ -71,6 +77,7 @@ export class CalendarComponent implements OnInit {
         }
 
         if(days < firstDay && week == 0){ // filler for days before 1st one in curr month
+          this.monthStart++;
           (lastNum == 31) ?
           this.weeks[week][days]= (30 - (firstDay-days-1)).toString():
           this.weeks[week][days]= (31 - (firstDay-days-1)).toString();
@@ -111,12 +118,22 @@ export class CalendarComponent implements OnInit {
   }
 
   tasksCounter(){
-    this.taskQuant = [];
-    for (let i = 0; i < this.weeksDisplay * 7; i++) {
-      var date = this.yearIndicator + "-" + this.monthIndicator+1 + "-" + i;
+    this.taskQuant = Array(this.weeksDisplay * 7);
+
+    // plus 1 & convert choosen month to string
+    var month = (this.monthIndicator + 1).toString();
+    if(this.monthIndicator < 9) // (fixed 1 -> 01)
+      var month = "0" + month;
+
+    for (let i = 1; i <= this.weeksDisplay * 7; i++) {
+
+      var starter = i - this.monthStart + 1;
+
+      var day = (i <= 9) ? "0" + starter : starter.toString(); // (fixed 1 -> 01)
+      var date = this.yearIndicator + "-" + month + "-" + day;
 
       this.Task.getQuant(date).subscribe( (taskCount:any) => {
-        this.taskQuant.push(taskCount);
+        this.taskQuant[i]=taskCount;
       });
     }
   }

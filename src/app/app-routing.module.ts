@@ -29,7 +29,10 @@ const routes: Routes = [
   },
   {
     path: "Calendar",
-    component: CalendarComponent
+    component: CalendarComponent,
+    children: [
+      { path: "Allproduct", component:AlltasksComponent }
+    ]
   },
   {
     path: "Settings",
