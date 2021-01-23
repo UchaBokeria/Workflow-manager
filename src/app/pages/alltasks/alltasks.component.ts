@@ -15,7 +15,7 @@ export class AlltasksComponent implements OnInit {
   ngOnInit(): void {
     this.Task.getAll().subscribe( (data:any) => {
       this.tasks = data;
-
+      console.log(data);
     });
   }
   remove(id){

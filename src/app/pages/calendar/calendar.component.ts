@@ -12,7 +12,7 @@ export class CalendarComponent implements OnInit {
   months = ["January","February","March","April","May","June","July",
                     "August","September","October","November","December"];
 
-  showDayList = true;
+  showDayList = false;
 
   weeks = [
     ["","","","","","",""],

@@ -15,10 +15,10 @@
   <section *ngIf="!showDayList">
     <div class="Weeks" *ngFor="let week of weeks; index as i">
       <div class="Days" *ngFor="let day of weeks[0]; index as j"
-        [ngClass]="{'Today': (i == Today.row && j == Today.col) && Current.ShowToday}">
+        [ngClass]="{'Today': (i == Today.row && j == Today.col) && Current.ShowToday}"
+        [routerLink]="['Allproduct']" (click)="showDayList = !showDayList">
 
-        <p [routerLink]="['Allproduct']"
-           (click)="showDayList = !showDayList">{{week[j]}}</p>
+        <p>{{week[j]}}</p>
 
         <div class="TaskQuant" *ngIf="taskQuant[i*7+j] > 0"> {{taskQuant[i*7+j]}} </div>
 
@@ -65,7 +65,9 @@
       </div>
     </div>
 
-    <router-outlet></router-outlet>
+    <div class="Tasks">
+      <router-outlet></router-outlet>
+    </div>
 
   </section>
 </div>
