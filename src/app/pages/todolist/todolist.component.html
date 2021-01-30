@@ -1,7 +1,7 @@
-<div class="Search-task">
-  <input type="text" name="" placeholder="Search.." (keyup)="search()">
-  <img src="assets/img/search.png" alt="icon">
-</div>
+<form class="Search-task" #Search="ngForm" (ngSubmit)="search(Search.value)">
+  <input type="text" name="keyword" placeholder="Search.." ngModel>
+  <input type="image" class="Button" src="assets/img/search.png">
+</form>
 
 
 <div class="New">

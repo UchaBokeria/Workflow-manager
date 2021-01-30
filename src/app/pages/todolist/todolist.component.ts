@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetTasksService } from '../../get-tasks.service';
+import { ActivatedRoute , Router } from '@angular/router';
 
 @Component({
   selector: 'app-todolist',
@@ -12,27 +13,30 @@ export class TodolistComponent implements OnInit {
   sortingDrop = "";
   editMode = false;
   createNew = false;
-    
+
   Tasks;
   checkAll = false;
-  
-  constructor() { }
-  
+
+  constructor(private route:ActivatedRoute,private router:Router) { }
+
   ngOnInit(): void {}
-  
+
 
   CheckAll(){
     for (let i = 0; i < this.Tasks.length; i++)
       this.Tasks[i].done = false;
-      
-    for (let i = 0; i < this.Tasks.length; i++) 
+
+    for (let i = 0; i < this.Tasks.length; i++)
       this.Tasks[i].done = this.checkAll;
-    
+
     this.checkAll = !this.checkAll;
   }
   Done(){}
   Undone(){}
   Clear(){}
   sort(){}
-  search(){}
+  search(value){
+    var keyword = value.keyword;
+    this.router.navigate(['Search',keyword],{ relativeTo: this.route });
+  }
 }

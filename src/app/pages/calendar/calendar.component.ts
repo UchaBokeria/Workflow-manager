@@ -131,7 +131,6 @@ export class CalendarComponent implements OnInit {
 
       var day = (i <= 9) ? "0" + starter : starter.toString(); // (fixed 1 -> 01)
       var date = this.yearIndicator + "-" + month + "-" + day;
-
       this.Task.getQuant(date).subscribe( (taskCount:any) => {
         this.taskQuant[i]=taskCount;
       });

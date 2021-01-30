@@ -1,15 +1,15 @@
 @import "~src/assets/sass/variables"
 
-.Search-task 
+.Search-task
   @include horizontalBox()
-  
+
   margin-top: 4%
   width: 90%
   padding: 0 5%
   background: $purple
-  border-radius: 20px 
+  border-radius: 20px
   transition: all 1s
-  
+
   &:hover
     transition: all 1s
     -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75)
@@ -19,11 +19,11 @@
     background: transparent
     color: white
     font-size: 1.4vw
-    &::placeholder 
+    &::placeholder
       color: white
       font-family: "italic"
-      
-  img
+
+  .Button
     cursor: pointer
     height: 5vh
     width: auto
@@ -37,19 +37,19 @@
   padding: 0 2%
   height: 12vh
   margin: 1.5% 0
-    
+
   .Today
     grid-column: 2
     width: 100%
     @include horizontalBox()
     justify-content: center
-    
+
     input
       width: 50%
   .Button
     grid-column: 1
     @include horizontalBox()
-      
+
     justify-content: center
     width: 100%
     height: 7vh
@@ -65,8 +65,8 @@
     padding-left: 3%
     border-radius: 10px
     background: $lightGray
-    
-  
+
+
   .Calendar
     grid-column: 3
     width: 100%
@@ -74,19 +74,19 @@
     display: flex
     cursor: pointer
     justify-content: center
-    
+
     img
       width: 65%
-      height: auto  
-  
-.Tools 
+      height: auto
+
+.Tools
   @include horizontalBox()
   width: 100%
   height: 7vh
-  
+
   .Tool
     @include horizontalBox()
-      
+
     justify-content: center
     transition: all 1s
     color: #333
@@ -96,13 +96,13 @@
     border-radius: 20px
     background: $highGray
     cursor: pointer
-    
+
     &:hover
       transition: all 1s
       background: $purple
       color: white
-      
-  .Clear 
+
+  .Clear
     background: $red
     color: white
     border-radius: 5px
@@ -110,36 +110,36 @@
       transition: all 1s
       background: $blue
       color: white
-    
+
   .Activated
     background: $purple
     color: white
-    
-      
-  .Sorting 
+
+
+  .Sorting
     width: 10%
     padding: 0 2.5%
     justify-content: space-around
     border-radius: 10px
-    
-  .Sorting-list 
+
+  .Sorting-list
     @include verticalBox()
-      
+
     top: 34.9vh
     right: 61.8%
-    width: 9% 
+    width: 9%
     height: 45vh
     position: absolute
     background: $highGray
     border-radius: 0 0 20px 20px
-    
+
   .Categories
     @include horizontalBox()
     width: 100%
-    
-  .Sorter 
+
+  .Sorter
     @include verticalBox()
-    
+
     outline: 0
     width: 80%
     height: 5vh
@@ -148,9 +148,9 @@
     background: $purple
     border-radius: 20px
     justify-content: center
-    
+
   .Activated-sorter
     background: $red
-  
-.All-tasks 
+
+.All-tasks
   width: 100%

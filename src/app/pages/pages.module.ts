@@ -13,14 +13,16 @@ import { AlltasksComponent } from './alltasks/alltasks.component';
 import { FilterComponent } from './filter/filter.component';
 import { SearchComponent } from './search/search.component';
 
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [TodolistComponent, ProjectsComponent, CalendarComponent, 
+  declarations: [TodolistComponent, ProjectsComponent, CalendarComponent,
                  SettingsComponent, NotfoundComponent, TaskdetailsComponent,
                  AlltasksComponent, FilterComponent, SearchComponent],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [
     TodolistComponent,
