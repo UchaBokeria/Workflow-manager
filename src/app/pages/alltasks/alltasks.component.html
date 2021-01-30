@@ -3,7 +3,7 @@
     <img src="assets/img/checked.png" *ngIf="value.done">
   </div>
 
-  <p [ngClass]="{'Checked' : value.task_done}"  *ngIf="!editMode">{{value.task_title}}</p>
+  <p [ngClass]="{'Checked' : value.done}"  *ngIf="!editMode">{{value.task_title}}</p>
 
   <input type="text" name="" [placeholder]="task.title" *ngIf="editMode">
 
